@@ -1,11 +1,17 @@
 package org.pathwaycommons.sif.model;
 
 /**
- * Created by Owner on 4/5/2017.
+ * Type of the SIF relation.
  */
-public class RelationType
+public interface RelationType
 {
-	String name;
-	String description;
-	boolean directed;
+	/**
+	 * Name of the relation. Style is hypenated small letters, such like "controls-state-change-of".
+	 */
+	String getName();
+
+	/**
+	 * True if this relation have a direction.
+	 */
+	boolean isDirected();
 }
