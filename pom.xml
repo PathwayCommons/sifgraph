@@ -6,7 +6,7 @@
 
 	<groupId>org.pathwaycommons</groupId>
 	<artifactId>sifgraph</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<build>
 		<pluginManagement>
@@ -20,7 +20,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-assembly-plugin</artifactId>
-					<version>2.2-beta-5</version>
+					<version>2.6</version>
 					<configuration>
 						<finalName>causalpath</finalName>
 						<appendAssemblyId>false</appendAssemblyId>
@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>org.jgrapht</groupId>
 			<artifactId>jgrapht-core</artifactId>
-			<version>1.0.2-SNAPSHOT</version>
+			<version>1.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
