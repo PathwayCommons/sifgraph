@@ -4,9 +4,47 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.pathwaycommons</groupId>
+	<groupId>pathwaycommons.sif</groupId>
 	<artifactId>sifgraph</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<url>https://github.com/PathwayCommons/sifgraph</url>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/PathwayCommons/sifgraph/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/PathwayCommons/sifgraph</url>
+	</ciManagement>
+
+	<organization>
+		<name>Pathway Commons</name>
+		<url>http://www.pathwaycommons.org</url>
+	</organization>
+
+	<scm>
+		<connection>scm:git:git://github.com/PathwayCommons/sifgraph.git</connection>
+		<developerConnection>scm:git:git@github.com:PathwayCommons/sifgraph.git</developerConnection>
+		<url>https://github.com/PathwayCommons/sifgraph/tree/master/</url>
+	</scm>
+
+	<mailingLists>
+		<mailingList>
+			<name>Pathway Commons Development Group</name>
+			<post>pathway-commons-dev@googlegroups.com</post>
+		</mailingList>
+	</mailingLists>
+
+	<licenses>
+		<license>
+			<name>MIT license</name>
+			<url>https://raw.githubusercontent.com/PathwayCommons/sifgraph/master/LICENSE</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<build>
 		<pluginManagement>
@@ -20,7 +58,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-assembly-plugin</artifactId>
-					<version>2.6</version>
+					<!--<version>2.6</version>-->
 					<configuration>
 						<finalName>causalpath</finalName>
 						<appendAssemblyId>false</appendAssemblyId>
@@ -35,10 +73,21 @@
 						</archive>
 					</configuration>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
-
 
 	<dependencies>
 		<dependency>
@@ -53,5 +102,25 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<site>
+			<!-- Do mvn site site:stage -DstagingDirectory=/tmp/path first,
+			 then manually add/push to the gh-pages branch on GitHub)-->
+			<id>github</id>
+			<name>PathwayCommons/sifgraph GitHub Pages</name>
+			<url>http://pathwaycommons.github.io/sifgraph/${project.version}</url>
+		</site>
+		<repository>
+			<id>ossrh</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>

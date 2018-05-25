@@ -40,8 +40,8 @@ public class WorkflowExample
 
 		// Load the NCI PID graph
 		SIFGraph graph = loader.load(new GZIPInputStream( new URL(
-			"http://www.pathwaycommons.org/archives/PC2/v8/PathwayCommons.8.pid.EXTENDED_BINARY_SIF.hgnc.txt.gz")
-			.openStream()));
+			"http://www.pathwaycommons.org/archives/PC2/v10/PathwayCommons10.All.hgnc.txt.gz")
+				.openStream()));
 
 		//--- Perform a query on the graph
 
